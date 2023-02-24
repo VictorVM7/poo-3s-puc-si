@@ -37,6 +37,7 @@ vetorLivros[4] = exercicio1.InsereLivro("O guia do mochileiro das galáxias", "D
 Console.Write("\n");
 for (int i = 0; i < vetorLivros.Length; i++)
 {
+    Console.WriteLine($"Livro {i} ->");
     Console.WriteLine($"Título: {vetorLivros[i].Titulo}");
     Console.WriteLine($"Autor: {vetorLivros[i].Autor}");
     Console.WriteLine($"Gênero: {vetorLivros[i].Genero}");
@@ -44,4 +45,22 @@ for (int i = 0; i < vetorLivros.Length; i++)
     Console.Write("\n");
 }
 
+// Letra C
+exercicio1.OrdenaLivro(vetorLivros);
 
+for (int i = 0; i < vetorLivros.Length; i++)
+{
+    Console.WriteLine($"{i} - {vetorLivros[i].Ano} - {vetorLivros[i].Titulo} ");
+}
+
+// Letra D
+Console.WriteLine("\nBusca Livro: ");
+string nome = Console.ReadLine().ToLower();
+if(exercicio1.BuscaLivro(vetorLivros, nome))
+{
+    Console.WriteLine($"{nome} existe na nossa biblioteca");
+}
+
+Console.WriteLine("\nVerifica gênero: ");
+string genero = Console.ReadLine().ToLower();
+Console.WriteLine($"{exercicio1.BuscaGenero(vetorLivros, genero)} é número que o genero aparece na nossa biblioteca");
